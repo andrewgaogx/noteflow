@@ -1,0 +1,40 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: #363d4e;
+}
+
+.content {
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  flex: 1;
+}
+
+.deleteBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.deleteBtn:hover {
+  color: var(--danger);
+  background: #3d1a23;
+  border-color: var(--danger);
+}

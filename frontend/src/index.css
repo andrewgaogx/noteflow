@@ -1,0 +1,31 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #0d0f12;
+  --surface:      #13161b;
+  --surface2:     #1c2029;
+  --border:       #252a35;
+  --text:         #e8eaf0;
+  --text-muted:   #6b7385;
+  --text-dim:     #3d4455;
+  --accent:       #5cefb0;
+  --danger:       #ef5c7a;
+  --ai:           #a78bfa;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}

@@ -1,0 +1,40 @@
+.textarea {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    line-height: 1.7;
+    resize: none;
+    min-height: 100px;
+}
+
+.textarea:focus {
+    border-color: var(--accent);
+}
+
+.composer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.addBtn {
+    background: var(--accent);
+    color: #0d0f12;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    align-self: flex-end;
+}
+
+.addBtn:hover {
+    background: #7df5c0;
+}
