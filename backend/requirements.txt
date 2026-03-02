@@ -1,0 +1,2 @@
+# Run this in your backend folder with venv activated:
+pip freeze > requirements.txt
