@@ -8,7 +8,6 @@ export default function App() {
 
   return (
     <div className={styles.app}>
-      <p>{import.meta.env.VITE_API_URL}</p>
       <header className={styles.header}>
         <h1 className={styles.title}>NoteFlow</h1>
         <span className={styles.count}>{notes.length} notes</span>
