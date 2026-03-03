@@ -19,12 +19,6 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-# notes = [
-#     {"id": 1, "content": "My first note"},
-#     {"id": 2, "content": "My second note"},
-# ]
-# next_id = 3
-
 class NoteCreate(BaseModel):
     content: str
 
