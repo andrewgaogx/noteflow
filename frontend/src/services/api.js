@@ -17,3 +17,10 @@ export async function createNote(content) {
 export async function deleteNote(id) {
     await fetch(`${BASE}/notes/${id}`, { method: 'DELETE' })
 }
+
+export async function summarizeNote(id) {
+    const res = await fetch(`${BASE}/notes/${id}/summarize`, {
+        method: "POST"
+    })
+    return res.json()
+}

@@ -2,9 +2,10 @@ import { useNotes } from './hooks/useNotes';
 import NoteCard from './components/NoteCard';
 import NoteComposer from './components/NoteComposer';
 import styles from './App.module.css'
+import { summarizeNote } from './services/api';
 
 export default function App() {
-  const {notes, addNote, removeNote } = useNotes()
+  const {notes, summarizingId, addNote, removeNote, summarize } = useNotes()
 
   return (
     <div className={styles.app}>
@@ -17,7 +18,13 @@ export default function App() {
 
       <ul className={styles.list}>
         {notes.map(note => (
-          <NoteCard key={note.id} note={note} onDelete={removeNote} />
+          <NoteCard 
+            key={note.id} 
+            note={note} 
+            onDelete={removeNote} 
+            onSummarize={summarize}
+            isSummarizing={summarizeNote === note.id}
+          />
         ))}
       </ul>
     </div>

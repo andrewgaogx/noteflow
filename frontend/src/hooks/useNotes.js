@@ -1,8 +1,9 @@
 import {useEffect, useState} from 'react'
-import { getNotes, createNote, deleteNote } from '../services/api'
+import { getNotes, createNote, deleteNote, summarizeNote } from '../services/api'
 
 export function useNotes() {
     const [notes, setNotes] = useState([])
+    const [summarizingId, setSummarizingId] = useState(null)
 
     useEffect(() => {
         getNotes().then(setNotes)
@@ -17,5 +18,15 @@ export function useNotes() {
         await deleteNote(id)
     }
 
-    return { notes, addNote, removeNote }
+    async function summarize(id) {
+        setSummarizingId(id)
+        try {
+            const data = await summarizeNote(id)
+            setNotes(prev => prev.map(n => n.id === id ? {...n, summary: data.summary } : n))
+        } finally {
+            setSummarizingId(null)
+        }
+    }
+
+    return { notes, addNote, removeNote, summarize }
 }

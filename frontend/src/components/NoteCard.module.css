@@ -1,3 +1,7 @@
+.body {
+  flex: 1;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -21,6 +25,29 @@
   flex: 1;
 }
 
+.summary {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #1e1a3d;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 6px;
+}
+
+.summaryTag {
+  font-size: 10px;
+  color: var(--ai);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
 .deleteBtn {
   background: transparent;
   border: 1px solid var(--border);
@@ -37,4 +64,24 @@
   color: var(--danger);
   background: #3d1a23;
   border-color: var(--danger);
+}
+
+.summarizeBtn {
+  background: #1e1a3d;
+  color: var(--ai);
+  border: 1px solid rgba(167,139,250,0.3);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.15s;
+}
+
+.summarizeBtn:hover:not(:disabled) {
+  background: rgba(167,139,250,0.15);
+}
+
+.summarizeBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
