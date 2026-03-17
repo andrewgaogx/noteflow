@@ -77,4 +77,4 @@ def summarize_note(id: int, db: Session = Depends(get_db)):
     note.summary = summary
     db.commit()
     db.refresh(note)
-    return {"summary": note.summary}
+    return {"summary": note.summary, "truncated": message.stop_reason == "max_tokens"}

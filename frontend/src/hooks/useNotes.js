@@ -22,11 +22,11 @@ export function useNotes() {
         setSummarizingId(id)
         try {
             const data = await summarizeNote(id)
-            setNotes(prev => prev.map(n => n.id === id ? {...n, summary: data.summary } : n))
+            setNotes(prev => prev.map(n => n.id === id ? {...n, summary: data.summary, truncated: data.truncated } : n))
         } finally {
             setSummarizingId(null)
         }
     }
 
-    return { notes, addNote, removeNote, summarize }
+    return { notes, summarizingId, addNote, removeNote, summarize }
 }

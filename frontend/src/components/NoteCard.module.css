@@ -85,3 +85,10 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.truncatedTag {
+  font-size: 11px;
+  color: #f5c05a;
+  margin-top: 6px;
+  display: block;
+}

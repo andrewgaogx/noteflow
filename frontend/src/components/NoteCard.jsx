@@ -9,6 +9,9 @@ export default function NoteCard({note, onDelete, onSummarize, isSummarizing }) 
                     <div className={styles.summary}>
                         <span className={styles.summaryTag}>AI Summary</span>
                         <p>{note.summary}</p>
+                        {note.truncated && (
+                            <span className={styles.truncatedTag}>⚠ Summary may be incomplete</span>
+                        )}
                     </div>
                 )}
             </div>
@@ -20,7 +23,7 @@ export default function NoteCard({note, onDelete, onSummarize, isSummarizing }) 
                         onClick={() => onSummarize(note.id)}
                         disabled={isSummarizing}
                     >
-                        {isSummarizing ? 'Summarizing...' : "Summarize"}
+                        {isSummarizing ? '⏳ Summarizing...' : "✦ Summarize"}
                     </button>
                 )}
                 <button className={styles.deleteBtn} onClick={() => onDelete(note.id)}>Delete</button>

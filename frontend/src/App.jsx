@@ -23,7 +23,7 @@ export default function App() {
             note={note} 
             onDelete={removeNote} 
             onSummarize={summarize}
-            isSummarizing={summarizeNote === note.id}
+            isSummarizing={summarizingId === note.id}
           />
         ))}
       </ul>
